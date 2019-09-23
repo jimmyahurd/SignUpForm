@@ -11,8 +11,14 @@ import android.widget.Toast;
 
 public class FormActivity extends AppCompatActivity {
 
+    final int NAME = 0;
+    final int EMAIL = 1;
+    final int PASSWORD = 2;
+    final int CONFIRMATION = 3;
+
     TextView fields[];
     Button save;
+    TextView message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,24 +26,26 @@ public class FormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fields = new TextView[4];
-        fields[0] = findViewById(R.id.name);
-        fields[1] = findViewById(R.id.email);
-        fields[2] = findViewById(R.id.password);
-        fields[3] = findViewById(R.id.confirmation);
+        fields[NAME] = findViewById(R.id.name);
+        fields[EMAIL] = findViewById(R.id.email);
+        fields[PASSWORD] = findViewById(R.id.password);
+        fields[CONFIRMATION] = findViewById(R.id.confirmation);
+
+        message = findViewById(R.id.message);
 
         save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 resetBackground(fields);
+                message.setText("");
                 if(fieldsEmpty(fields)) {
                     Toast toast = Toast.makeText(FormActivity.this, "Please fill out all fields", Toast.LENGTH_LONG);
                     toast.show();
-                }else if(!fields[2].getText().equals(fields[3].getText())){
+                }else if(!passwordsEqual(fields)){
                     Toast toast = Toast.makeText(FormActivity.this, "Passwords must match", Toast.LENGTH_LONG);
                     toast.show();
-                }else{
-
-                }
+                }else
+                    message.setText("Welcome, " + fields[NAME].getText() + ", to the SignUpForm App");
             }
         });
     }
@@ -57,5 +65,9 @@ public class FormActivity extends AppCompatActivity {
         for(int i = 0; i < fields.length; i++){
             fields[i].setBackgroundColor(Color.TRANSPARENT);
         }
+    }
+
+    private boolean passwordsEqual(TextView fields[]){
+        return fields[PASSWORD].getText().toString().equals(fields[CONFIRMATION].getText().toString());
     }
 }
