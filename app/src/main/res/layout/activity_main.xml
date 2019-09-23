@@ -7,7 +7,7 @@
     tools:context=".FormActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nameView"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/emailView"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -26,10 +26,10 @@
         android:text="E-mail:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/nameView" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/passwordView"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -37,10 +37,10 @@
         android:text="Password:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/emailView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/confirmationView"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
@@ -48,7 +48,7 @@
         android:text="Confirmation:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordView" />
 
     <EditText
         android:id="@+id/name"
@@ -58,7 +58,7 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/nameView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -69,7 +69,7 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/emailView"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <EditText
@@ -80,7 +80,7 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toEndOf="@+id/passwordView"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
@@ -91,6 +91,31 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/confirmationView"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="160dp"
+        android:text="Enter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmation" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="168dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save" />
 </androidx.constraintlayout.widget.ConstraintLayout>
