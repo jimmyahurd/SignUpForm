@@ -4,3 +4,5 @@ when pressed, first checks if the fields are all filled. If any are empty, it wi
 fields with a red background. If all the fields are filled, then the onClickListener will check if the password and password confirmation
 are the same. If they are not, it will ask the user to make them the same. If all fields are filled and the passwords are equal, then the
 app will greet the user using the name provided.
+
+![Screenshot](https://github.com/jimmyahurd/SignUpForm/blob/master/SignUpForm.png)
